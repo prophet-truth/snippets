@@ -1,0 +1,26 @@
+def csvread_usdtogbp():
+    import csv  #import library to easily process CSV file
+    global opt
+    global mon
+    if opt == "USD to GBP":
+        filename = "USDtoGBP.csv" #Set filename
+
+        #create two empty lists ready to separate data
+        dates = [] 
+        rates = []
+
+        with open(filename,'r') as data: 
+            for line in csv.reader(data):       #For each line in the CSV file...
+                if line[0] != "Date":           #Ignore the header line   
+                    dates.append(line[0])       #append first field to dates list
+          
+                    line[1] = float(line[1])    #convert to a floating point number        
+                    rates.append(line[1])       #append value to rates list
+            
+     
+        
+        data.close()    #Close file after use
+
+        print("\nFirst Date: ", dates[0])
+        print("\nFirst Rate: ", rates[0])
+        print("\nPerform a calculation: ", mon * rates[0])
