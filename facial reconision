@@ -1,0 +1,47 @@
+# Run this first
+#!pip install cv2_imshow (image show library)
+from google.colab.patches import cv2_imshow
+import os.path
+import cv2 #computer vision 
+import sys
+
+covidfileexists = os.path.isfile('sampledata/faces/haarcascade_frontalface_default.xml') 
+if covidfileexists:
+  pass
+else:
+  !rm -rf sampledata
+  !git clone https://github.com/awchisholm/sampledata.git
+
+def recognise_faces(imagePath):
+  cascPath = "sampledata/faces/haarcascade_frontalface_default.xml"
+  faceCascade = cv2.CascadeClassifier(cascPath)
+
+  # Read the image
+  image = cv2.imread(imagePath)
+  original_image = image.copy()
+  gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+  # Detect faces in the image using function
+  faces = faceCascade.detectMultiScale(gray, scaleFactor = 1.1, minNeighbors = 5, minSize = (30,30))
+
+  for (x, y, w ,h) in faces:
+    cv2.rectangle(image, (x,y), (x+w, y+h), (0,255,0) , 2)
+
+  return(image, faces, original_image)
+  
+  
+  
+  
+#imagePath = "sampledata/faces/walloffaces.PNG"
+imagePath = "/content/sampledata/faces/politicians.PNG"
+#imagePath = "/content/sampledata/faces/BJDT.PNG"
+#imagePath = "/content/sampledata/faces/abba.png"
+#imagePath = "/content/20210208_130923.jpg"
+
+
+image, faces, original_image = recognise_faces(imagePath=imagePath)
+
+print('Original Image')
+cv2_imshow(original_image)
+print('Image with %d faces identified'  % len(faces))
+cv2_imshow(image)
