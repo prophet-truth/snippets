@@ -1,0 +1,6 @@
+import hashlib
+textwitherrors = "There was a young fellow from Hyde,\r\nWho fell down a sewer and died.\r\nAlas, his poor brother,\r\nFell down another.\r\nNow theyre interred side by side."
+errorhash = hashlib.sha512(textwitherrors.encode('utf8')).hexdigest()
+print(textwitherrors)
+print()
+print(errorhash)
