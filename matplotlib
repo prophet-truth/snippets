@@ -1,0 +1,6 @@
+import pandas as pd
+    import matplotlib.pyplot as plt
+    currency = pd.read_csv('X:/paper1/finance/finance/USDtoGBP.csv')
+    plt.plot(currency['Date'], currency['GBP'])
+    plt.xticks(rotation=90) 
+    plt.show()
