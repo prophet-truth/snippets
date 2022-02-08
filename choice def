@@ -1,0 +1,22 @@
+def option():
+    global opt
+    print("+----------------------------+")
+    print("| what typer of currency     |")
+    print("| would you like to convert  |")
+    print("| 1. USD to GBP              |")
+    print("| 2. GBP to USD              |")
+    print("+----------------------------+")
+
+
+    while True:
+        choice = (input("please choose a valid option (1-2)"))
+        if choice == "1":
+            opt = "USD to GBP"
+            return(opt)
+        elif choice == "2":
+            opt = "GBP to USD"
+            return(opt)
+        else:
+            print("error")
+            choice = (input("please choose a valid option (1-2)"))
+            return 0
