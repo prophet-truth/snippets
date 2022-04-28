@@ -11,7 +11,7 @@ def checkpassword(PW):
            
            
            
-welcome()
+
 URNM = (input("what is your username?\n"))
 #
 PW = (input("what is your password?\n"))
@@ -21,9 +21,8 @@ PW = (input("what is your password?\n"))
 validPW =  checkpassword(PW)
 if validPW == True:
     print("login details correct you can now continue")
-    option()
-    amount()
-    csvread_usdtogbp()
-    csvread_gbptousd()
+    #####
+    #####
+    #####
 else:
     print("incorrect")
