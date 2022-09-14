@@ -1,0 +1,28 @@
+
+from guizero import App, TextBox, PushButton, Box, Combo, CheckBox, Slider
+
+
+app = App(title = "texteditor")
+
+def open_file():
+    with open(file_name.value, "r") as f:
+        editor.value = f.read()
+
+def save_file():
+    with open(file_name.value, "w") as f:
+        f.write(editor.value)
+
+file_controls = Box(app, align = "top", width = "fill")
+
+file_name = TextBox(file_controls, text = "text_file.txt", width = 50, align = "left")
+
+save_buton = PushButton(file_controls, text = "save", align = "right", command = save_file)
+open_button = PushButton(file_controls, text = "Open", align = "right", command = open_file)
+editor = TextBox(app, multiline = True, height = "fill", width = "fill")
+
+def change_font():
+    editor.font = font.value
+
+preferences_controls = Box(app, align = "bottom", width = "fill", border = True)
+font = Combo(preferences_controls, options=["courier", "times new roman","verdana", "Comic Sans"], align = "left", command = change_font)
+app.display()
