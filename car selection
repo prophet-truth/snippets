@@ -1,0 +1,43 @@
+def carselection():
+    global carid
+    # check which car is selected
+    if carlistbox.value == 'volkswagen golf':
+        # "1st option car"
+        carid = 1
+        descriptioncar1.visible = True
+        descriptioncar1pt2.visible = True
+        picturecar1.visible = True
+        descriptioncar2.visible = False
+        descriptioncar2pt2.visible = False
+        picturecar2.visible =False
+        descriptioncar3.visible = False
+        descriptioncar3pt2.visible = False
+        picturecar3.visible =False
+
+    elif carlistbox.value == 'vauxhall corsa':
+        #"2nd option car"
+        carid = 2
+        descriptioncar2.visible = True
+        descriptioncar2pt2.visible = True
+        picturecar2.visible = True
+        descriptioncar1.visible = False
+        descriptioncar1pt2.visible = False
+        picturecar1.visible =False
+        descriptioncar3.visible = False
+        descriptioncar3pt2.visible = False
+        picturecar3.visible =False
+    elif carlistbox.value == 'honda civic':
+        #"3rd option car"
+        carid = 3
+        descriptioncar3.visible = True
+        descriptioncar3pt2.visible = True
+        picturecar3.visible = True
+        descriptioncar1.visible = False
+        descriptioncar1pt2.visible = False
+        picturecar1.visible =False
+        descriptioncar2.visible = False
+        descriptioncar2pt2.visible = False
+        picturecar2.visible =False
+
+    else:
+        print("error")
