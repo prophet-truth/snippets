@@ -1,0 +1,9 @@
+def LoadCombo(): #load the combo box with cars
+    sqlselect = "SELECT * FROM CAR_TABLE"
+    rows = query_database(database_file, sqlselect)
+    if len(rows) == 0: ### This checks cars are found ###
+        info("Error","NO CARS FOUND")
+    else:
+        for row in rows:
+            line = row[1] + " " + row[2]
+            carlistbox.append(line)
