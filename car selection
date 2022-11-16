@@ -41,3 +41,47 @@ def carselection():
 
     else:
         print("error")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+carlistbox = ListBox(windowb, command=carselection)
+bpicture = Picture(pict_box, image="logo.jpg", align = "left", width = 100, height = 100)
+text_blank = Text(windowb, text=" ")
+numdays = Text(windowb, text = "how many days would you like")
+combonum = Combo(windowb, options=["1", "2", "3", "4", "5", "6", "7"])
+descriptioncar1 = Text(windowb, text= "volkswagen golf has a 1.5L 4 cylinder engine with")
+descriptioncar1pt2 = Text(windowb, text= "5 doors and 5 seat suitable for a mid size family(4-5)")
+text_blank = Text(windowb, text=" ")
+picturecar1 = Picture(windowb, image="VW Golf.jpg", width = 300, height = 225)
+#
+descriptioncar2 = Text(windowb, text= "vauxhall corsa has a 1.4L 4 cylinder engine with")
+descriptioncar2pt2 = Text(windowb, text= "3 doors and 4 seats suitable for a small sized family")
+text_blank = Text(windowb, text=" ")
+picturecar2 = Picture(windowb, image="V Corsa.jpg", width = 300, height = 250)
+#
+descriptioncar3 = Text(windowb, text= "honda civic has a 1.8L 6 cylinder engine with")
+descriptioncar3pt2 = Text(windowb, text= "3 doors and 4 seats suitable for a small sized family (copyright owned by josh tice)")
+text_blank = Text(windowb, text=" ")
+picturecar3 = Picture(windowb, image="Honda Civic.jpg", width = 300, height = 250)
+
+text_blank = Text(windowb, text=" ")
+descriptioncar1.visible = False
+descriptioncar1pt2.visible = False
+descriptioncar2.visible = False
+descriptioncar2pt2.visible = False
+descriptioncar3.visible = False
+descriptioncar3pt2.visible = False
+picturecar2.visible =False
+picturecar1.visible =False
+picturecar3.visible =False
+booking_button = PushButton(pict_box, text="book", command=booking, align = "right")
